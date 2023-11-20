@@ -73,27 +73,26 @@ a {
     display: flex;
 
 }
-.color{
+.color, .itemSeleccionado{
     width: 25px;
     height: 25px;
     border-radius: 25px;
     
-    
 }
 
-#colorRed{
+.red{
     background-color: red;
     
 }
 
-#colorGreen{
+.green{
     background-color: green;
 }
 
-#colorBlue{
+.blue{
     background-color: blue;
 }
 
-#colorYellow{
+.yellow{
     background-color: yellow;
 }
