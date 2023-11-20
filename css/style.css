@@ -64,3 +64,36 @@ a {
     background-color: yellow;
 
 }
+.selectColor{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerColors{
+    display: flex;
+
+}
+.color{
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    
+    
+}
+
+#colorRed{
+    background-color: red;
+    
+}
+
+#colorGreen{
+    background-color: green;
+}
+
+#colorBlue{
+    background-color: blue;
+}
+
+#colorYellow{
+    background-color: yellow;
+}
