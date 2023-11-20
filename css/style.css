@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+}
+
+.conteinerIndex{
+    width: 574px;
+    height: 300px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btnIndex{
+    display: flex;
+    justify-content: space-around;
+}
+
+.btnPlay{
+    background-color: yellow;
+}
+
+.btnHelp{
+    background-color: green;
+    
+}
+
+.btnHelp a{
+    color: aliceblue;
+}
