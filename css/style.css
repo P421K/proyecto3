@@ -48,3 +48,19 @@ a {
     height: 100px;
     
 }
+
+.conteinerBoard{
+    display: flex;
+    background-color: black;
+    width: 30%;
+    height: 30%;
+    color: aliceblue;
+}
+
+.board{
+    color:black;
+    width: 300px;
+    height: 400px;
+    background-color: yellow;
+
+}

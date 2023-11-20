@@ -3,26 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="conteiner">
-        <h1>mainBoard</h1>
-        <a href="./nameAndLevel.html">anterior</a>
-        <a href="./index.html">inicio</a>
+      <!-- <h1>mainBoard</h1> -->
+      <div class="titleNameLevel">
+        <img
+          class="imgTitleNameLevel"
+          src="./img/img_title/imgIndexProyecto3.png"
+          alt=""
+        />
+        <!-- <h1>MasterMinds</h1> -->
+      </div>
+      
         <div class="contMainBoard">
+          <div class="conteinerBoard">
+            <div class="board">board</div>
+            <div class="verificarBolas">verificar bolas</div>
+          </div>
           <div class="tabBalls">
             <div class="mainBallsComb"></div>
             <div class="verBalls"></div>
           </div>
           <div class="opcionesMainBoard">
-            <div class="coloresSecretos"></div>
+            <div class="coloresSecretos">
+              <p>colores secretos</p>
+            </div>
             <div class="selectColor">
-        
+              <h3>Seleccionar color</h3>
+              <div class="colors" id="red">red</div>
+              <div class="colors" id="green">green</div>
+              <div class="colors" id="blue">blue</div>
+              <div class="colors" id="yellow">yellow</div>
             </div>
             <button onclick="verificar()" id="enviarCodigo">enviar</button>
           </div>
         </div>
+        <div class="btnNav">
+            <a href="./nameAndLevel.html">anterior</a>
+            <a href="./index.html">inicio</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
