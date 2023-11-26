@@ -19,7 +19,7 @@ Proyecto sobre el juego de Master Mind.
   
 ## Deploy 🚀
 <div align="center">
-    <a href="https://www.google.com"><strong>Url proyecto 3 </strong></a>🚀🚀🚀
+    <a href="https://p421k.github.io/proyecto3/"><strong>Url proyecto 3 </strong></a>🚀🚀🚀
 </div>
 
 
@@ -32,6 +32,7 @@ Ejemplo
 
 ## Contacto
 
-<a href = "mailto:micorreoelectronico@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+<a href = "parik4@gmail.com"><img src="https://img.shields.io/badge/Gmail-C6362C?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+<a href="https://www.linkedin.com/in/linkedinUser/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+
 </p>

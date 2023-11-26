@@ -10,7 +10,13 @@ const selectedColors = [];
 let times = 0;
 let oportunidades = 0;
 let hint;
-var playerName = [];
+
+var playerName = document.getElementById("playerName").value;
+localStorage.playerName = [];
+
+document.getElementById("nomJugador").innerHTML =
+  localStorage.getItem("nomJugador");
+console.log(playerName);
 
 function randomFinal() {
   const randomSelec = [...new Array(4)].map((color) => {
@@ -90,18 +96,3 @@ function calculoOportunidades(colors) {
   });
   return oportunidades;
 }
-function agregarNomJugador(){
-  let nombreJugador = document.getElementById('playerName').value.split("");
-  arrayNombre = arrayNombre.concat(nombreJugador);
-}
-// var arraytexto = [];
-
-// function añadir() {
-//   let palbras = document.getElementById('texto').value.split(" ");
-//   arraytexto = arraytexto.concat(palbras);
-//   document.getElementById('texto').value = ""; //limpias el array
-// }
-
-// function mostrar() {
-//   document.getElementById("demo").innerHTML = arraytexto.join("<br>");
-// }
