@@ -43,7 +43,7 @@ a {
     height: 100%;
 }
 
-.containerNameLevel{
+.contenedorNameLevel{
     display: flex;
     flex-direction: column;
     align-items: center;

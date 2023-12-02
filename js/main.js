@@ -10,13 +10,14 @@ const selectedColors = [];
 let times = 0;
 let oportunidades = 0;
 let hint;
+var playerName = document.getElementById("name").value;
 
-var playerName = document.getElementById("playerName").value;
-localStorage.playerName = [];
+//almacenando nombre de usuario
+localStorage.setItem("nombre", playerName);
 
-document.getElementById("nomJugador").innerHTML =
-  localStorage.getItem("nomJugador");
-console.log(playerName);
+//mostrando nombre de usuario
+var nombreAlmacenado = localStorage.getItem("nombre");
+console.log(nombreAlmacenado);
 
 function randomFinal() {
   const randomSelec = [...new Array(4)].map((color) => {
@@ -65,7 +66,7 @@ function selectColor(color) {
 
     selectedColors.length = 0;
     selectionSelector.innerHTML = "";
-    if (times > 5) {
+    if (times > 2) {
       alert("game over");
     }
     if (
