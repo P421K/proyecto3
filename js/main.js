@@ -8,23 +8,26 @@ const colors = ["red", "green", "blue", "Yellow"];
 let final = randomFinal();
 const selectedColors = [];
 let times = 0;
-// let oportunidades = 0;
+let oportunidades = 0;
 let hint;
 
-//almacenando nombre de usuario
+/// Función para guardar el nombre del jugador en el almacenamiento local
 function guardarNombre() {
   var playerName = document.getElementById("name").value;
   localStorage.setItem("nombre", playerName);
 }
 
-//mostrando nombre de usuario
+// Función para mostrar el nombre almacenado del jugador
 function mostrarNombreAlmacenado() {
   var nombreJugadorAlmacenado = localStorage.getItem("nombre");
-  document.getElementById("nombreJugador").textContent =
-    "Hola, " + nombreJugadorAlmacenado + "!";
-  console.log(nombreJugadorAlmacenado);
+  var nombreJugadorElemento = document.getElementById("nombreJugador");
+
+  if (nombreJugadorElemento) {
+    nombreJugadorElemento.textContent =
+      "Hola, " + nombreJugadorAlmacenado + "!";
+    console.log(nombreJugadorAlmacenado);
+  }
 }
-mostrarNombreAlmacenado();
 
 function randomFinal() {
   const randomSelec = [...new Array(4)].map((color) => {
