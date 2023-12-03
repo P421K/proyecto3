@@ -62,7 +62,7 @@ function randomFinal() {
     const random = Math.floor(Math.random() * colors.length);
     return colors[random];
   });
-  console.log(randomSelec);
+  // console.log(randomSelec); // para saber la combinaciom
   return randomSelec;
 }
 
