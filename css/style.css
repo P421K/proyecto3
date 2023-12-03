@@ -124,3 +124,7 @@ a {
 .nomJugador{
     font-family: Arial, Helvetica, sans-serif;
 }
+
+#nombreJugador{
+    font-family: 'Courier New', Courier, monospace;
+}

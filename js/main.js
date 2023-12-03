@@ -8,16 +8,23 @@ const colors = ["red", "green", "blue", "Yellow"];
 let final = randomFinal();
 const selectedColors = [];
 let times = 0;
-let oportunidades = 0;
+// let oportunidades = 0;
 let hint;
-var playerName = document.getElementById("name").value;
 
 //almacenando nombre de usuario
-localStorage.setItem("nombre", playerName);
+function guardarNombre() {
+  var playerName = document.getElementById("name").value;
+  localStorage.setItem("nombre", playerName);
+}
 
 //mostrando nombre de usuario
-var nombreAlmacenado = localStorage.getItem("nombre");
-console.log(nombreAlmacenado);
+function mostrarNombreAlmacenado() {
+  var nombreJugadorAlmacenado = localStorage.getItem("nombre");
+  document.getElementById("nombreJugador").textContent =
+    "Hola, " + nombreJugadorAlmacenado + "!";
+  console.log(nombreJugadorAlmacenado);
+}
+mostrarNombreAlmacenado();
 
 function randomFinal() {
   const randomSelec = [...new Array(4)].map((color) => {
