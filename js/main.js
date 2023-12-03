@@ -18,7 +18,7 @@ const selectedColors = [];
 let times = 0;
 
 // Número máximo de intentos permitidos
-const maxAttempts = 3;
+const maxAttempts = 10;
 
 // Almacenar las respuestas dadas por el juego
 let oportunidades = [];
