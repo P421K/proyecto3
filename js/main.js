@@ -25,7 +25,8 @@ let oportunidades = [];
 
 // Bandera para verificar si el juego ha terminado
 let juegoTerminado = false;
-/// Función para guardar el nombre del jugador en el almacenamiento local
+
+// Función para guardar el nombre del jugador en el almacenamiento local
 function guardarNombre() {
   var playerName = document.getElementById("name").value;
   localStorage.setItem("nombre", playerName);
@@ -39,52 +40,54 @@ function mostrarNombreAlmacenado() {
   if (nombreJugadorElemento) {
     nombreJugadorElemento.textContent =
       "Hola, " + nombreJugadorAlmacenado + "!";
-    console.log(nombreJugadorAlmacenado);
+    // console.log(nombreJugadorAlmacenado);
   }
 }
 
+// Función para reiniciar el juego
+function resetGame() {
+  final = randomFinal();
+  times = 0;
+  muestraOportunidad.innerHTML = "";
+  juegoTerminado = false;
+  selectedColors.length = 0;
+}
+
+// Mostrar el nombre almacenado al cargar la página
+mostrarNombreAlmacenado();
+
+// Función para generar una combinación aleatoria de colores
 function randomFinal() {
-  const randomSelec = [...new Array(4)].map((color) => {
-    const random = Math.floor(Math.random() * Math.floor(colors.length));
+  const randomSelec = [...new Array(4)].map(() => {
+    const random = Math.floor(Math.random() * colors.length);
     return colors[random];
   });
   console.log(randomSelec);
   return randomSelec;
 }
 
-btnSelector.forEach((btn) => {
-  const color = btn.classList[1];
-  btn.addEventListener("click", () => selectColor(color));
-});
+ // Función para calcular las respuestas del juego
+function calculoOportunidades(colors) {
+  const oportunidades = [];
 
-function selectColor(color) {
-  console.log(color);
-
-  //
-  const div = document.createElement("div");
-  div.classList.add("itemSeleccionado");
-  div.classList.add(color);
-  selectionSelector.appendChild(div);
-  selectedColors.push(color);
-
-  if (selectedColors.length === 4) {
-    times++;
-    for (const selColor of selectedColors) {
-      const divGuardado = document.createElement("div");
-      divGuardado.classList.add("colorGuardado");
-      divGuardado.classList.add(selColor);
-      muestraOportunidad.appendChild(divGuardado);
+  colors.forEach((color, index) => {
+    if (final[index] === color) {
+      oportunidades.push("correcto");
+    } else if (final.includes(color)) {
+      oportunidades.push("incorrecto");
     }
+  });
 
-    const oportunidadesArray = calculoOportunidades(selectedColors);
+  // Llenar con "incorrecto" si las respuestas no llegan a 4
+  while (oportunidades.length < 4) {
+    oportunidades.push("incorrecto");
+  }
 
-    for (const hint of oportunidadesArray) {
-      const divOportArray = document.createElement("div");
-      if (hint === "correcto") {
-        divOportArray.classList.add("correcto");
-      } else {
+  return oportunidades;
+}
+
         divOportArray.classList.add("medio");
-      }
+      
       muestraOportunidad.appendChild(divOportArray);
     }
 
