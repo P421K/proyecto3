@@ -1,4 +1,4 @@
-# Proyecto 3  
+# Proyecto 3
 
 <details>
   <summary>Contenido 📝</summary>
@@ -12,23 +12,26 @@
 </details>
 
 ## Objetivo 🎯
+
 El proyecto trata de recrear un juego llamado Master Mind usando Js, html y css.
 
 ## Sobre el proyecto 🔎
+
 Proyecto sobre el juego de Master Mind.
-  
+
 ## Deploy 🚀
+
 <div align="center">
     <a href="https://p421k.github.io/proyecto3/"><strong>Url proyecto 3 </strong></a>🚀🚀🚀
 </div>
 
-
-
 ## Vistas
-Ejemplo
-<img src="/img/img_pantallas/imgPantalla1.png"> 
-<img src="/img/img_pantallas/imgPantalla2.png"> 
 
+Ejemplo
+<img src="/img/img_pantallas/imgPantalla1.png">
+<img src="/img/img_pantallas/imgPantalla2.png">
+<img src="/img/img_pantallas/imgPantalla3.png">
+<img src="/img/img_pantallas/imgPantalla4.png">
 
 ## Contacto
 

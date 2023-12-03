@@ -66,7 +66,7 @@ function randomFinal() {
   return randomSelec;
 }
 
- // Función para calcular las respuestas del juego
+// Función para calcular las respuestas del juego
 function calculoOportunidades(colors) {
   const oportunidades = [];
 
@@ -86,41 +86,81 @@ function calculoOportunidades(colors) {
   return oportunidades;
 }
 
-        divOportArray.classList.add("medio");
-      
-      muestraOportunidad.appendChild(divOportArray);
+// Agregar un evento a cada botón de color
+btnSelector.forEach((btn) => {
+  const color = btn.classList[1];
+  btn.addEventListener("click", () => {
+    if (!juegoTerminado) {
+      selectColor(color);
+    }
+  });
+});
+
+// Función para manejar la selección de un color por el jugador
+function selectColor(color) {
+  // console.log(color);
+
+  // Crear un elemento div para mostrar el color seleccionado
+  const div = document.createElement("div");
+  div.classList.add("itemSeleccionado");
+  div.classList.add(color);
+  selectionSelector.appendChild(div);
+  selectedColors.push(color);
+
+  if (selectedColors.length === 4) {
+    times++;
+
+    // Crear un contenedor para mostrar la combinación seleccionada y las respuestas
+    const adivinanza = document.createElement("div");
+    adivinanza.classList.add("adivinanza");
+    muestraOportunidad.appendChild(adivinanza);
+
+    // Mostrar los colores seleccionados por el jugador
+    for (const selColor of selectedColors) {
+      const divGuardado = document.createElement("div");
+      divGuardado.classList.add("colorGuardado");
+      divGuardado.classList.add(selColor);
+      adivinanza.appendChild(divGuardado);
     }
 
-    selectedColors.length = 0;
-    selectionSelector.innerHTML = "";
-    if (times > 2) {
-      alert("game over");
+    // Agregar una línea visual (hr) entre colores seleccionados y respuestas
+    const hr = document.createElement("hr");
+    adivinanza.appendChild(hr);
+
+    // Calcular las respuestas del juego
+    oportunidades = calculoOportunidades(selectedColors);
+
+    // Mostrar las respuestas con colores indicativos (verde o rojo)
+    for (let i = 0; i < oportunidades.length; i++) {
+      const divOportArray = document.createElement("div");
+
+      if (oportunidades[i] === "correcto") {
+        divOportArray.classList.add("circulo");
+        divOportArray.classList.add("verde");
+      } else {
+        divOportArray.classList.add("circulo");
+        divOportArray.classList.add("rojo");
+      }
+
+      adivinanza.appendChild(divOportArray);
     }
-    if (
-      oportunidades.every(hint === "correcto") &&
-      oportunidades.length === final.length
-    ) {
-      alert("ganaste!");
+
+    // Reiniciar los colores seleccionados y el área de selección
+    selectedColors.length = 0;
+    selectionSelector.textContent = "";
+
+    // Comprobar si se alcanzó el número máximo de intentos
+    if (times >= maxAttempts) {
+      alert("Game over. No has adivinado los colores.");
+      juegoTerminado = true;
+      resetGame();
+    }
+
+    // Comprobar si se adivinaron todos los colores
+    if (oportunidades.every((hint) => hint === "correcto")) {
+      alert("¡Felicidades! Has adivinado los colores.");
+      juegoTerminado = true;
+      resetGame();
     }
   }
-}
-
-function calculoOportunidades(colors) {
-  const oportunidades = [];
-  const comparacion = [];
-
-  colors.forEach((color, index) => {
-    if (final[index] === color) {
-      oportunidades.push("correcto");
-      comparacion.push(color);
-      console.log(oportunidades);
-    }
-  });
-
-  colors.forEach((color, index) => {
-    if (!comparacion.includes(color) && final.includes(color)) {
-      oportunidades.push("medio");
-    }
-  });
-  return oportunidades;
 }
