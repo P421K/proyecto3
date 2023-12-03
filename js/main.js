@@ -1,16 +1,30 @@
-//
+// Seleccionar todos los botones de color
 const btnSelector = document.querySelectorAll(".color");
+
+// Seleccionar el área donde se muestra la combinación actual y las respuestas
 const selectionSelector = document.querySelector(".selectorActual");
 const muestraOportunidad = document.querySelector(".oportunidades");
 
-//ramdom de colores
-const colors = ["red", "green", "blue", "Yellow"];
-let final = randomFinal();
-const selectedColors = [];
-let times = 0;
-let oportunidades = 0;
-let hint;
+// Colores posibles para el juego
+const colors = ["red", "green", "blue", "yellow"];
 
+// Inicializar la combinación final aleatoria
+let final = randomFinal();
+
+// Almacenar los colores seleccionados por el jugador
+const selectedColors = [];
+
+// Contador de intentos
+let times = 0;
+
+// Número máximo de intentos permitidos
+const maxAttempts = 3;
+
+// Almacenar las respuestas dadas por el juego
+let oportunidades = [];
+
+// Bandera para verificar si el juego ha terminado
+let juegoTerminado = false;
 /// Función para guardar el nombre del jugador en el almacenamiento local
 function guardarNombre() {
   var playerName = document.getElementById("name").value;
