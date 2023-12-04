@@ -1,29 +1,13 @@
-// Seleccionar todos los botones de color
+//
 const btnSelector = document.querySelectorAll(".color");
-
-// Seleccionar el área donde se muestra la combinación actual y las respuestas
 const selectionSelector = document.querySelector(".selectorActual");
 const muestraOportunidad = document.querySelector(".oportunidades");
-
-// Colores posibles para el juego
 const colors = ["red", "green", "blue", "yellow"];
-
-// Inicializar la combinación final aleatoria
 let final = randomFinal();
-
-// Almacenar los colores seleccionados por el jugador
 const selectedColors = [];
-
-// Contador de intentos
 let times = 0;
-
-// Número máximo de intentos permitidos
 const maxAttempts = 10;
-
-// Almacenar las respuestas dadas por el juego
 let oportunidades = [];
-
-// Bandera para verificar si el juego ha terminado
 let juegoTerminado = false;
 
 // Función para guardar el nombre del jugador en el almacenamiento local
@@ -53,7 +37,6 @@ function resetGame() {
   selectedColors.length = 0;
 }
 
-// Mostrar el nombre almacenado al cargar la página
 mostrarNombreAlmacenado();
 
 // Función para generar una combinación aleatoria de colores
@@ -96,7 +79,6 @@ btnSelector.forEach((btn) => {
   });
 });
 
-// Función para manejar la selección de un color por el jugador
 function selectColor(color) {
   // console.log(color);
 
@@ -122,8 +104,7 @@ function selectColor(color) {
       divGuardado.classList.add(selColor);
       adivinanza.appendChild(divGuardado);
     }
-
-    // Agregar una línea visual (hr) entre colores seleccionados y respuestas
+//linea para separar
     const hr = document.createElement("hr");
     adivinanza.appendChild(hr);
 
